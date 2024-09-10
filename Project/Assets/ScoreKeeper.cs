@@ -15,6 +15,13 @@ public class ScoreKeeper : MonoBehaviour
     }
 
     private int currentScore = 0;
+    public int CurrentScore
+    {
+        get
+        {
+            return currentScore;
+        }
+    }
 
     void Awake()
     {
@@ -25,4 +32,5 @@ public class ScoreKeeper : MonoBehaviour
     {
         currentScore += points;
     }
+
 }

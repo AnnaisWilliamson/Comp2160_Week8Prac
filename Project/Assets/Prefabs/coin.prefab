@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4477763680361572852}
   - component: {fileID: 8562648665223245022}
+  - component: {fileID: 8329528810593373007}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +48,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 5
   playerLayer: 6
+--- !u!65 &8329528810593373007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853814221516194478}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &703375257641538575
 PrefabInstance:
   m_ObjectHideFlags: 0

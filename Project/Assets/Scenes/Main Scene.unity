@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8303915809803277435, guid: 82cb6e689b4ac50448b39a0899c89e8a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8619830111013740310, guid: 82cb6e689b4ac50448b39a0899c89e8a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -760,6 +764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 8562648665223245022, guid: 447d852ae66642043956a049af7a50fb, type: 3}
+      propertyPath: scoreKeeper
+      value: 
+      objectReference: {fileID: 1339771927}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -772,8 +780,8 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1715944721}
-  - {fileID: 3085621882768613846}
   - {fileID: 5357479557535010902}
   - {fileID: 2164898411894096967}
   - {fileID: 1652143069}
+  - {fileID: 3085621882768613846}
   - {fileID: 9066753287388481129}

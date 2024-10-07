@@ -7,6 +7,15 @@ public class PlayerMove : MonoBehaviour
 {
     private PlayerInput actions;
     private InputAction movementAction;
+    private InputControl control;
+    
+    private enum PlayerMode
+    {
+        Keyboard,
+        Gamepad
+    }
+    [SerializeField] private PlayerMode playerMode;
+    private bool allowMove;
 
     [SerializeField] private float moveSpeed;
     private Vector3 direction = new Vector3(0f, 0f, 1f);
@@ -14,7 +23,10 @@ public class PlayerMove : MonoBehaviour
     void Awake()
     {
         actions = new PlayerInput();
-        movementAction = actions.Walking.Movement;
+        movementAction = actions.player.move;
+        movementAction.performed += OnInput;
+        
+
     }
 
     void OnEnable()
@@ -29,10 +41,20 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        
+       
     }
 
     void Update()
+    {
+        if (allowMove)
+        {
+            OnMove();
+        }
+        
+    
+    }
+
+    void OnMove()
     {
         direction = new Vector3(0f, 0f, 1f);
         float acceleration = movementAction.ReadValue<Vector2>().y;
@@ -42,5 +64,31 @@ public class PlayerMove : MonoBehaviour
             acceleration = movementAction.ReadValue<Vector2>().x;
         }
         transform.Translate(direction * acceleration * moveSpeed * Time.deltaTime, Space.Self);
+    }
+
+    void OnInput(InputAction.CallbackContext context)
+    {
+        if (context.control.path.StartsWith("/Keyboard/"))
+        {
+            if (playerMode == PlayerMode.Keyboard)
+            {
+                allowMove = true;
+            }
+            else 
+            {
+                allowMove = false;
+            }
+        } 
+        else
+        {
+            if (playerMode == PlayerMode.Gamepad)
+            {
+                allowMove = true;
+            }
+            else 
+            {
+                allowMove = false;
+            }
+        }
     }
 }

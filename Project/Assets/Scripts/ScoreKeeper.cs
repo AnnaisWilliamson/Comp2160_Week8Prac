@@ -14,12 +14,21 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private int currentScore = 0;
-    public int CurrentScore
+    private int currentScoreP1 = 0;
+    public int CurrentScoreP1
     {
         get
         {
-            return currentScore;
+            return currentScoreP1;
+        }
+    }
+
+    private int currentScoreP2 = 0;
+    public int CurrentScoreP2
+    {
+        get
+        {
+            return currentScoreP2;
         }
     }
 
@@ -28,9 +37,17 @@ public class ScoreKeeper : MonoBehaviour
         instance = this;
     }
 
-    public void OnPickup(int points)
+    public void OnPickup(int points, string player)
     {
-        currentScore += points;
+        if (player.Contains("1"))
+        {
+            currentScoreP1 += points;
+        }
+        else if (player.Contains("2"))
+        {
+            currentScoreP2 += points;
+        }
+        
     }
 
 }

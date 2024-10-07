@@ -22,9 +22,9 @@ public class Coin : MonoBehaviour
         if (collision.gameObject.layer == playerLayer)
         {
             Destroy(gameObject);
-            Debug.Log("collision with player");
+            Debug.Log("collision with " + collision.gameObject.name);
             
-            ScoreKeeper.Instance.OnPickup(points);
+            ScoreKeeper.Instance.OnPickup(points, collision.gameObject.name);
             
         }
     }

@@ -23,7 +23,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private ScoreKeeper scoreKeeper;
 
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreTextP1;
+    [SerializeField] private TextMeshProUGUI scoreTextP2;
     [SerializeField] private string scoreFormat = "Score: {0}";
 
     void Awake() 
@@ -41,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = string.Format(scoreFormat, ScoreKeeper.Instance.CurrentScore);               
+        scoreTextP1.text = string.Format("P1 " + scoreFormat, ScoreKeeper.Instance.CurrentScoreP1);               
+        scoreTextP2.text = string.Format("P2 " + scoreFormat, ScoreKeeper.Instance.CurrentScoreP2);               
     }
 }

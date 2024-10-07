@@ -25,8 +25,6 @@ public class PlayerMove : MonoBehaviour
         actions = new PlayerInput();
         movementAction = actions.player.move;
         movementAction.performed += OnInput;
-        
-
     }
 
     void OnEnable()
@@ -41,7 +39,6 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-       
     }
 
     void Update()
@@ -50,8 +47,6 @@ public class PlayerMove : MonoBehaviour
         {
             OnMove();
         }
-        
-    
     }
 
     void OnMove()
@@ -68,18 +63,18 @@ public class PlayerMove : MonoBehaviour
 
     void OnInput(InputAction.CallbackContext context)
     {
-        if (context.control.path.StartsWith("/Keyboard/"))
+        if (context.control.displayName.Length == 1) // WASD or character key input
         {
             if (playerMode == PlayerMode.Keyboard)
             {
-                allowMove = true;
+                allowMove = true; // allow movement of this object if the inputted key matches this object's player mode.
             }
             else 
             {
                 allowMove = false;
             }
         } 
-        else
+        else // includes gamepad input and arrow keys
         {
             if (playerMode == PlayerMode.Gamepad)
             {
